@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css"
+    />
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <main>
+      <div class="account-settings">
+        <p class="account-name">LUNA</p>
+        <button type="button" id="activate-account">Activate Account</button>
+      </div>
+
+      <div class="wallet">
+        <h1 class="disabled">₱<span id="balance">0</span></h1>
+        
+        <input type="number" id="input-value" class="disabled" disabled/>
+        
+        <div class="buttons-container">
+          <button type="button" class="disabled" id="deposit" disabled>
+            <span class="mdil mdil-arrow-up"></span> Deposit
+          </button>
+  
+          <button type="button" class="disabled" id="withdraw" disabled>
+            <span class="mdil mdil-arrow-down"></span> Withdraw
+          </button>
+        </div>
+      </div>
+
+      <!-- <hr> -->
+
+      <div class="transactions">
+        <h2>Transactions</h2>
+        <ul id="transaction-list">
+        </ul>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

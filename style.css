@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  background-color: #eee;
+}
+
+
+main {
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .1);
+  background-color: #fff;
+}
+
+div.account-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+div.account-settings button { font-size: 12px; }
+
+div.wallet {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+main h1.disabled { color: #aaa; }
+
+main h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+main input {
+  border: 1px solid #aaa;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: .5rem 1.5rem;
+  font-size: 1.125rem;
+  color: inherit;
+}
+
+main button {
+  cursor: pointer;
+  padding: .5rem 1rem;
+  background-color: #eee;
+  border-radius: 1rem;
+  border: none;
+  font-weight: 600;
+  user-select: none;
+  transition: all 500ms;
+}
+
+button#deposit:not(.disabled) { color: darkGreen; }
+button#withdraw:not(.disabled) { color: darkRed; }
+
+main button:hover { background-color: #ddd; }
+main button:first-child { margin-right: .5rem; }
+
+button.disabled {
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+button.disabled:hover { background-color: #fff; }
+
+hr {
+  border: none;
+  height: .5px;
+  background-color: #ddd;
+  margin-bottom: 1.25rem;
+}
+
+.transactions h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 2;
+  height: 6em;
+  max-height: 6em;
+  overflow-y: auto;
+  padding-right: .5rem;
+  scrollbar-width: thin;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+ul li span:first-child { font-weight: 600; }
+ul li span:nth-child(2) { font-size: 12px; }
