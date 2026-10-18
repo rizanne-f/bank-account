@@ -1,8 +1,14 @@
 const activateAccount = document.getElementById('activate-account');
 const balance = document.getElementById('balance');
 const inputValue = document.getElementById('input-value');
-const walletButtons = document.querySelectorAll('button');
+const walletButtons = document.querySelectorAll('.wallet button');
 const transactionList = document.getElementById('transaction-list');
+const dialog = document.getElementById('dialog');
+const dialogContent = document.getElementById('dialog-content');
+const dialogClose = document.getElementById('close');
+
+dialogClose.addEventListener('click', () => dialog.close() );
+
 
 let currentUser;
 
@@ -60,7 +66,12 @@ function formattedDate() {
 walletButtons.forEach(button => {
   button.addEventListener('click', (e) => {
     const value = +inputValue.value;
-    if (value <= 0) return inputValue.value = '';
+    
+    if (value <= 0) {
+      dialogContent.textContent = 'Please enter a value greater than 0.';
+      dialog.showModal();
+      return inputValue.value = ''
+    };
 
     const currentButtonId = button.getAttribute('id');
     
@@ -83,8 +94,11 @@ walletButtons.forEach(button => {
       return;
     }
 
-    if (value > currentUser.getBalance())
+    if (value > currentUser.getBalance()) {
+      dialogContent.textContent = 'Please enter an amount less than your balance.';
+      dialog.showModal();
       return inputValue.value = '';
+    }
 
     balance.innerText = currentUser.withdraw(value);
     inputValue.value = '';
